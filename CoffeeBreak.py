@@ -94,7 +94,7 @@ class CoffeeBreak:
                     path = self.get_dir() + "Coffee_icon.png"
                     n = pynotify.Notification ("CoffeeBreak","Your coffee break is over. Back to work =)", path)
                     n.show()            
-                    self.icon.set_tooltip("CoffeeBreak : procrastination killer")
+                    self.icon.set_tooltip("CoffeeBreak : procrastination fighter")
 
 
         source_id = gobject.timeout_add(self.deltaT*1000, self.update) #*1000 : valeur compensatoire de ralentissement
