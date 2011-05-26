@@ -18,7 +18,7 @@ class CoffeeBreak:
     def __init__(self):
         dirPath = os.path
         self.icon = gtk.status_icon_new_from_file(os.path.realpath(self.get_dir() + "Coffee_icon_small.png"))
-        self.icon.set_tooltip("You still have {0} minutes of coffee break.\n Enjoy them !".format(self.calc_time(BREAK_TIME)))
+        self.icon.set_tooltip("You still have {0} of coffee break.\n Enjoy them !".format(self.calc_time(BREAK_TIME)))
         self.icon.connect('activate',self.icon_click) # icon_click changes status 
         self.icon.set_visible(True)
 
