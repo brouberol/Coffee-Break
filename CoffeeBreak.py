@@ -7,7 +7,6 @@ import os
 import sys
 import math
 import gobject
-#import appindicator
 import pynotify
 import pygame
 from time import *
