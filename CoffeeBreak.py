@@ -22,6 +22,10 @@ class CoffeeBreak:
         self.icon.connect('activate',self.icon_click) # icon_click changes status 
         self.icon.set_visible(True)
 
+        path = self.get_dir() + "Coffee_icon.png"
+        n = pynotify.Notification ("Coffee Break","Enjoy your {0} of coffee break !".format(self.calc_time(BREAK_TIME)),path)
+        n.show()            
+
         self.menu = gtk.Menu()
         self.menuItem = gtk.ImageMenuItem(gtk.STOCK_QUIT)
         self.menuItem.connect('activate', self.quit_cb, self.icon)
