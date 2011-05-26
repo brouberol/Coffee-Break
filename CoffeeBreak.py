@@ -7,8 +7,9 @@ import os
 import sys
 import math
 import gobject
-import appindicator
+#import appindicator
 import pynotify
+import pygame
 from time import *
 gtk.gdk.threads_init()
 
@@ -38,8 +39,7 @@ class CoffeeBreak:
         self.start_working_time = time()
 
     def popup_menu_cb(self, widget, button, time, data = None):
-
-        if button == 3:
+        if button == 3: #right click
             if data:
                 data.show_all()
                 data.popup(None, None, gtk.status_icon_position_menu,3, time, self.icon)
@@ -90,14 +90,22 @@ class CoffeeBreak:
                 if delta > BREAK_TIME:
                     self.set_status("working")
                     self.start_working_time = time()
-                    initCaps()
-                    path = self.get_dir() + "Coffee_icon.png"
-                    n = pynotify.Notification ("CoffeeBreak","Your coffee break is over. Back to work =)", path)
-                    n.show()            
+                    self.back_to_work()
                     self.icon.set_tooltip("CoffeeBreak : procrastination fighter")
-
-
+ 
         source_id = gobject.timeout_add(self.deltaT*1000, self.update) #*1000 : valeur compensatoire de ralentissement
+
+    def back_to_work(self):
+        initCaps()
+        pygame.init()
+        iconpath = self.get_dir() + "Coffee_icon.png"
+        soundpath = self.get_dir()+"alert.ogg"
+        pygame.mixer.music.load(soundpath)
+        n = pynotify.Notification ("CoffeeBreak","Your coffee break is over. Back to work =)", iconpath)
+        n.show() 
+        pygame.mixer.music.play()
+        pygame.event.wait()
+        
 
     def main(self):
         source_id = gobject.timeout_add(self.deltaT, self.update)
