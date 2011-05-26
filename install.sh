@@ -12,7 +12,7 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 else
     mkdir -p "$INSTALLDIR"
-    cp *.{png,py} "$INSTALLDIR/"
+    cp *.{png,py,ogg} "$INSTALLDIR/"
     ln -s "$INSTALLDIR/CoffeeBreak.py" "$BINDIR/coffeebreak"
     chmod +x "$BINDIR/coffeebreak"
 
