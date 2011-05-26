@@ -4,6 +4,7 @@ import pygtk
 pygtk.require('2.0')
 import gtk
 import os
+import sys
 import math
 import gobject
 import appindicator
@@ -12,14 +13,12 @@ from time import *
 gtk.gdk.threads_init()
 
 
-BREAK_TIME = 60*10 # 10 minutes
-
 class CoffeeBreak:
 
     def __init__(self):
         dirPath = os.path
         self.icon = gtk.status_icon_new_from_file(os.path.realpath(self.get_dir() + "Coffee_icon_small.png"))
-        self.icon.set_tooltip("You still have 10 minutes of coffee break.\n Enjoy them !")
+        self.icon.set_tooltip("You still have {0} minutes of coffee break.\n Enjoy them !".format(self.calc_time(BREAK_TIME)))
         self.icon.connect('activate',self.icon_click) # icon_click changes status 
         self.icon.set_visible(True)
 
@@ -127,6 +126,13 @@ def initCaps ():
 
 #MAIN()
 if __name__ == "__main__":
+
+    # If no time limite given as argument, standard duration = 10 min
+    if len(sys.argv) > 1:
+        BREAK_TIME = int(sys.argv[1])*60
+    else:
+        BREAK_TIME = 60*10 # 10 minutes
+
     app = CoffeeBreak()
     app.main()
 
