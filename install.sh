@@ -15,7 +15,6 @@ else
     cp *.{png,py} "$INSTALLDIR/"
     ln -s "$INSTALLDIR/CoffeeBreak.py" "$BINDIR/coffeebreak"
     chmod +x "$BINDIR/coffeebreak"
-    alias coffeebreak='coffeebreak &'
 
     echo "CoffeeBreak bin located in $BINDIR/coffeebreak directory"
     echo "Command is 'coffeebreak'"
