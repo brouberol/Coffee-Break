@@ -52,7 +52,7 @@ class CoffeeBreak:
     
     def calc_time(self, t, Break = None):
         if Break == None:
-            minutes = math.floor(t/60)
+            minutes = math.ceil(t/60)
             if minutes > 1 :
                 return "{0} minutes".format(int(abs(minutes)))
             else:
