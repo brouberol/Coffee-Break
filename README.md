@@ -10,8 +10,8 @@
 
 <p>First, you need to install it. For that, pop a terminal and type <br/>
 <pre>$ cd /path/to/CoffeeBreak/directory<br/>
-<pre>$ sudo chmod +x install.sh<br/>
-<pre>$ sudo ./install.sh</pre></p>
+$ sudo chmod +x install.sh<br/>
+$ sudo ./install.sh</pre></p>
 
 <p>Now you can create a shortcut on your taskbar (NB: bin is at /usr/local/bin/coffeebreak, icons are at /usr/local/share/coffeebreak/), or type in <pre>coffeebreak X</pre> where X is your break time, and is expressed in minutes.</p>
 
