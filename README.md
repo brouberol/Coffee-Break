@@ -1,8 +1,7 @@
-<h3>Coffee Break</h3>
+<h2>Coffee Break : Procrastination fighter</h2>
 
 <p>Coffee Break is a small program designed to <b>help you to get back to work</b>, after taking a quick break from it.</p>
-
-<p>Getting to work is hard. But getting back to it after an awesome TV series episodes (Farscaaaape for ever \o/), guitar playing or anything as cool as that, requires more than mental strength.. It requires someone to tell you to go back and struggle some more !</p>
+<p>Getting to work is hard. But getting back to it after watching an awesome TV series episode (Farscape \o/), playing guitar or anything as cool as that, requires more than mental strength.. It requires someone to tell you to go back and struggle some more !</p>
 
 <p>That is what Coffee Break does. It just reminds you after some time that you need to go back to work</p>
 
@@ -19,3 +18,12 @@ It requires the following python libraries: <ul>
 <li>pygame</li>
 </ul></p>
 
+<h3>How to use-it?</h3>
+<p>Really simple!</p>
+
+<p>First, you need to install it. For that, pop a terminal and type <br/>
+<pre>$ cd /path/to/CoffeeBreak/directory</pre><br/>
+<pre>$ sudo chmod +x install.sh</pre><br/>
+<pre>$ sudo ./install.sh</pre></p>
+
+<p>Now you can create a shortcut on your taskbar (NB: bin is at /usr/local/bin/coffeebreak, icons are at /usr/local/share/coffeebreak/), or type in <pre>coffeebreak X</pre>, where X is your break time, and is expressed in minutes.</p>
