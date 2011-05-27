@@ -16,7 +16,7 @@ $ sudo ./install.sh</pre></p>
 
 <h3>Requirements</h3>
 <p>Coffee Break has been only developped and tested on Ubuntu 10.10 Maverick Meerkat.<br/>
-It requires the following python libraries: <ul>
+It requires the following python modules : <ul>
 <li>pygtk (v >= 2.0) <i>preinstalled</i></li>
 <li>gtk <i>preinstalled</i></li>
 <li>os <i>preinstalled</i></li>
