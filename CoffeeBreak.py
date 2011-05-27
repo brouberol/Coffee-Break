@@ -98,13 +98,11 @@ class CoffeeBreak:
         initCaps()
         pygame.init()
         iconpath = self.get_dir() + "Coffee_icon.png"
-        soundpath = self.get_dir()+"alert.ogg"
+        soundpath = self.get_dir() + "alert.ogg"
         pygame.mixer.music.load(soundpath)
         n = pynotify.Notification ("CoffeeBreak","Your coffee break is over. Back to work =)", iconpath)
         n.show() 
         pygame.mixer.music.play()
-        pygame.event.wait()
-        
 
     def main(self):
         source_id = gobject.timeout_add(self.deltaT, self.update)
@@ -142,7 +140,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         BREAK_TIME = int(sys.argv[1])*60
     else:
-        BREAK_TIME = 60*10 # 10 minutes
+        BREAK_TIME = 60*0.1 # 10 minutes
 
     app = CoffeeBreak()
     app.main()
