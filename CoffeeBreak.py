@@ -17,10 +17,9 @@ class CoffeeBreak:
         self.icon.set_tooltip("You still have {0} of coffee break.\n Enjoy!".format(self.calc_time(BREAK_TIME)))
         self.icon.connect('activate',self.icon_click) # icon_click changes status 
         self.icon.set_visible(True)
-
-        path = self.get_dir() + "Coffee_icon.png"
-        n = pynotify.Notification ("Coffee Break","Enjoy your {0} of coffee break !".format(self.calc_time(BREAK_TIME)),path)
-        n.show()            
+        
+        self.path = self.get_dir() + "Coffee_icon.png"
+        self.WelcomeNotify()
 
         self.menu = gtk.Menu()
         self.menuItem = gtk.ImageMenuItem(gtk.STOCK_QUIT)
@@ -62,6 +61,7 @@ class CoffeeBreak:
     def set_status(self, status):
         if status == "coffee":
             self.icon.set_from_file(self.get_dir() + "Coffee_icon_small.png")
+            self.WelcomeNotify()
         else:
             self.icon.set_from_file(self.get_dir() + "Coffee_icon_grey_small.png")
         self.status = status
@@ -89,6 +89,10 @@ class CoffeeBreak:
                     self.icon.set_tooltip("CoffeeBreak : procrastination fighter")
  
         source_id = gobject.timeout_add(self.deltaT*1000, self.update) #*1000 : valeur compensatoire de ralentissement
+
+    def WelcomeNotify(self):
+        n = pynotify.Notification ("Coffee Break","Enjoy your {0} of coffee break !".format(self.calc_time(BREAK_TIME)),self.path)
+        n.show()            
 
     def back_to_work(self):
         initCaps()
@@ -134,7 +138,7 @@ if __name__ == "__main__":
     if len(argv) > 1:
         BREAK_TIME = int(argv[1])*60
     else:
-        BREAK_TIME = 60*0.2 # 10 minutes
+        BREAK_TIME = 60*10 # 10 minutes
 
     app = CoffeeBreak()
     app.main()
