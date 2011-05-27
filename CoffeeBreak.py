@@ -1,24 +1,20 @@
 #!/usr/bin/python2.6
 
-import pygtk
-pygtk.require('2.0')
 import gtk
-import os
-import sys
-import math
+import os.path
+from sys import argv
+from math import ceil
 import gobject
 import pynotify
-import pygame
-from time import *
+from time import time
 gtk.gdk.threads_init()
 
 
 class CoffeeBreak:
 
     def __init__(self):
-        dirPath = os.path
         self.icon = gtk.status_icon_new_from_file(os.path.realpath(self.get_dir() + "Coffee_icon_small.png"))
-        self.icon.set_tooltip("You still have {0} of coffee break.\n Enjoy them !".format(self.calc_time(BREAK_TIME)))
+        self.icon.set_tooltip("You still have {0} of coffee break.\n Enjoy!".format(self.calc_time(BREAK_TIME)))
         self.icon.connect('activate',self.icon_click) # icon_click changes status 
         self.icon.set_visible(True)
 
@@ -51,13 +47,13 @@ class CoffeeBreak:
     
     def calc_time(self, t, Break = None):
         if Break == None:
-            minutes = math.ceil(t/60)
+            minutes = ceil(t/60)
             if minutes > 1 :
                 return "{0} minutes".format(int(abs(minutes)))
             else:
                 return "{0} minute".format(int(abs(minutes)))
         else:
-            minutes = math.ceil((Break - t)/60)
+            minutes = ceil((Break - t)/60)
             if minutes > 1 :
                 return "{0} minutes".format(int(abs(minutes)))
             else:
@@ -96,13 +92,11 @@ class CoffeeBreak:
 
     def back_to_work(self):
         initCaps()
-        pygame.init()
         iconpath = self.get_dir() + "Coffee_icon.png"
         soundpath = self.get_dir() + "alert.ogg"
-        pygame.mixer.music.load(soundpath)
-        n = pynotify.Notification ("CoffeeBreak","Your coffee break is over. Back to work =)", iconpath)
+        n = pynotify.Notification ("CoffeeBreak","Your coffee break is over. Back to work =)", iconpath)   
         n.show() 
-        pygame.mixer.music.play()
+        os.system("paplay {0}".format(soundpath))     
 
     def main(self):
         source_id = gobject.timeout_add(self.deltaT, self.update)
@@ -137,10 +131,10 @@ def initCaps ():
 if __name__ == "__main__":
 
     # If no time limite given as argument, standard duration = 10 min
-    if len(sys.argv) > 1:
-        BREAK_TIME = int(sys.argv[1])*60
+    if len(argv) > 1:
+        BREAK_TIME = int(argv[1])*60
     else:
-        BREAK_TIME = 60*10 # 10 minutes
+        BREAK_TIME = 60*0.2 # 10 minutes
 
     app = CoffeeBreak()
     app.main()
