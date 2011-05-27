@@ -91,8 +91,8 @@ class CoffeeBreak:
         source_id = gobject.timeout_add(self.deltaT*1000, self.update) #*1000 : valeur compensatoire de ralentissement
 
     def WelcomeNotify(self):
-        n = pynotify.Notification ("Coffee Break","Enjoy your {0} of coffee break !".format(self.calc_time(BREAK_TIME)),self.path)
-        n.show()            
+        pynotify.Notification ("Coffee Break","Enjoy your {0} of coffee break !".format(self.calc_time(BREAK_TIME)),self.path).show()
+                    
 
     def back_to_work(self):
         initCaps()
