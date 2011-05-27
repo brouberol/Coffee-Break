@@ -14,7 +14,8 @@ It requires the following python libraries: <ul>
 <li>sys <i>preinstalled</i></li>
 <li>math <i>preinstalled</i></li>
 <li>pynotify <i>preinstalled</i></li>
+<li>gobject <i>preinstalled</i></li>
 <li>time <i>preinstalled</i></li>
-<li>pygame <i>preinstalled <b>?</b></i></li>
+<li>pygame</li>
 </ul></p>
 
