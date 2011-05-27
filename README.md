@@ -15,7 +15,7 @@ $ sudo ./install.sh</pre></p>
 <p>NB : default X value is 10 minutes.</p>
 
 <h3>Requirements</h3>
-<p>Coffee Break has been only developped and tested on Ubuntu 10.10 Maverick Meerkat.<br/>
+<p>Coffee Break has been only developped and tested on Ubuntu 10.10 / Mint 9.<br/>
 It requires the following python libraries: <ul>
 <li>gtk <i>preinstalled</i></li>
 <li>os <i>preinstalled</i></li>
