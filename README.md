@@ -1,7 +1,7 @@
 <h2>Coffee Break : Procrastination fighter</h2>
 
 <p>Coffee Break is a small program designed to <b>help you to get back to work</b>, after taking a quick break from it.</p>
-<p>Getting back to work after watching a TV series episode (<a href="http://en.wikipedia.org/wiki/Farscape">Farscape</a>), playing guitare, etc, requires more than mental strength... It requires someone to tell you to go back and struggle some more !</p>
+<p>Getting back to work after watching a TV series episode (<a href="http://en.wikipedia.org/wiki/Farscape">Farscape</a>), playing guitar, etc, requires more than mental strength... It requires someone to tell you to go back and struggle some more !</p>
 
 <p>That is what Coffee Break does. It just reminds you after some time that you need to go back to work.</p>
 
