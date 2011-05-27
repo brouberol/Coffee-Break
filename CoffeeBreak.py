@@ -134,7 +134,7 @@ if __name__ == "__main__":
     if len(argv) > 1:
         BREAK_TIME = int(argv[1])*60
     else:
-        BREAK_TIME = 60*0.2 # 10 minutes
+        BREAK_TIME = 60*10 # 10 minutes
 
     app = CoffeeBreak()
     app.main()
