@@ -6,9 +6,7 @@
 <p>That is what Coffee Break does. It just reminds you after some time that you need to go back to work.</p>
 
 <h3>How to use-it?</h3>
-<p>Really simple!</p>
-
-<p>First, you need to install it. For that, pop a terminal and type <br/>
+<p>Really simple! >First, you need to install it. For that, pop a terminal and type <br/>
 <pre>$ cd /path/to/CoffeeBreak/directory
 $ sudo chmod +x install.sh
 $ sudo ./install.sh</pre></p>
