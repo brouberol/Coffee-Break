@@ -25,3 +25,8 @@ It requires the following python libraries: <ul>
 <li>gobject <i>preinstalled</i></li>
 <li>time <i>preinstalled</i></li>
 </ul></p>
+
+<h3>Uninstall</h3>
+<p>In a terminal, type
+<pre>$ sudo chmod +x uninstall.sh
+$ ./uninstall.sh</pre></p>
