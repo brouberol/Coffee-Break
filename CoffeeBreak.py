@@ -1,7 +1,7 @@
 #!/usr/bin/python2.6
 
 import gtk
-import os.path
+import os
 from sys import argv
 from math import ceil
 import gobject
