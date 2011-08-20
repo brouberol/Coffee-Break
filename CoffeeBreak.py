@@ -1,7 +1,7 @@
 #!/usr/bin/python2.6
 
 import gtk
-import os
+from os import system, path
 from sys import argv
 from math import ceil
 import gobject
@@ -13,7 +13,7 @@ gtk.gdk.threads_init()
 class CoffeeBreak:
 
     def __init__(self):
-        self.icon = gtk.status_icon_new_from_file(os.path.realpath(self.get_dir() + "Coffee_icon_small.png"))
+        self.icon = gtk.status_icon_new_from_file(path.realpath(self.get_dir() + "Coffee_icon_small.png"))
         self.icon.set_tooltip("You still have {0} of coffee break.\n Enjoy!".format(self.calc_time(BREAK_TIME)))
         self.icon.connect('activate',self.icon_click) # icon_click changes status 
         self.icon.set_visible(True)
@@ -48,7 +48,7 @@ class CoffeeBreak:
         gtk.main_quit()
 
     def get_dir(self):
-        return os.path.dirname(os.path.realpath(__file__)) + os.path.sep
+        return path.dirname(path.realpath(__file__)) + path.sep
     
     def calc_time(self, t, Break = None):
         """
@@ -123,7 +123,7 @@ class CoffeeBreak:
         soundpath = soundpath.replace(" ","\ ")
         n = pynotify.Notification ("CoffeeBreak","Your coffee break is over. Back to work =)", iconpath)   
         n.show() 
-        os.system("paplay {0}".format(soundpath))    
+        system("paplay {0}".format(soundpath))    
 
     def main(self):
         """
