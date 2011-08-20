@@ -30,3 +30,6 @@ It requires the following python libraries: <ul>
 <p>In a terminal, type
 <pre>$ sudo chmod +x uninstall.sh
 $ ./uninstall.sh</pre></p>
+
+<p>--<br/>
+Icons from <a href="http://commons.wikimedia.org">Wikimedia</a>.</p>
